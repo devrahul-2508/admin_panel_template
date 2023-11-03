@@ -10,6 +10,7 @@ class Statistics extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
+        height: 350,
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
@@ -52,8 +53,11 @@ class Statistics extends StatelessWidget {
                       width: 10,
                     ),
                     Text("Weekyly"),
+                    SizedBox(
+                      width: 10,
+                    ),
                     Icon(
-                      Icons.tune,
+                      Icons.filter_list,
                       size: 20,
                     )
                   ],
