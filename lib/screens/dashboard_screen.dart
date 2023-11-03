@@ -5,6 +5,7 @@ import 'package:flutter_admin_template/widgets/header.dart';
 import 'package:flutter_admin_template/widgets/overview.dart';
 import 'package:flutter_admin_template/widgets/savings.dart';
 import 'package:flutter_admin_template/widgets/statistics.dart';
+import 'package:flutter_admin_template/widgets/transactions.dart';
 
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({super.key});
@@ -36,7 +37,8 @@ class DashBoardScreen extends StatelessWidget {
                 ],
               ),
             if (!Responsive.isDesktop(context)) Statistics(),
-            if (!Responsive.isDesktop(context)) Savings()
+            if (!Responsive.isDesktop(context)) Savings(),
+            Transaction()
           ],
         ),
       )),
