@@ -19,14 +19,17 @@ class OverView extends StatelessWidget {
           Text(
             "Overview",
             style: TextStyle(
-                color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0.5),
           ),
           SizedBox(height: 16.0),
           Responsive(
             mobile: OverviewInfoCardGridView(
               crossAxisCount: _size.width < 850 ? 2 : 4,
               childAspectRatio:
-                  _size.width < 850 && _size.width > 350 ? 1.3 : 1.0,
+                  _size.width < 850 && _size.width > 350 ? 2.0 : 1.0,
             ),
             tablet: OverviewInfoCardGridView(
               childAspectRatio:

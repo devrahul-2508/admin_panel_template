@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_template/utils/responsive.dart';
+import 'package:flutter_admin_template/controller/drawer_controller.dart' as dw;
 
 class Header extends StatelessWidget {
-  const Header({
+  Header({
     Key? key,
   }) : super(key: key);
 
@@ -13,7 +14,11 @@ class Header extends StatelessWidget {
       child: Row(
         children: [
           if (!Responsive.isDesktop(context))
-            IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+            IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {
+                  dw.DrawerController.controlDrawer();
+                }),
           if (!Responsive.isMobile(context))
             Text(
               "Dashboard",
