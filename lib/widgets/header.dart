@@ -55,7 +55,10 @@ class ProfileCard extends StatelessWidget {
         ),
       ),
       title: Text("John Doe"),
-      subtitle: Text("johndoe@gmail.com"),
+      subtitle: Text(
+        "johndoe@gmail.com",
+        overflow: TextOverflow.ellipsis,
+      ),
     );
   }
 }

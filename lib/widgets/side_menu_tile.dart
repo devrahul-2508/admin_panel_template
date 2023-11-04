@@ -16,7 +16,7 @@ class SideMenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
       child: Container(
         decoration: BoxDecoration(
             color: bgColor, borderRadius: BorderRadius.circular(10)),
@@ -24,7 +24,7 @@ class SideMenuTile extends StatelessWidget {
           leading: icon,
           title: Text(
             title,
-            style: TextStyle(color: activeColor),
+            style: TextStyle(color: activeColor, fontWeight: FontWeight.w400),
           ),
         ),
       ),

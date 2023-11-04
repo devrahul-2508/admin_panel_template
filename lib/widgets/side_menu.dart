@@ -45,10 +45,24 @@ class _SideMenuState extends State<SideMenu> {
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 20),
+                    fontSize: 19),
               )
             ],
           )),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Text(
+              "MENU",
+              style: TextStyle(
+                  color: Colors.black,
+                  letterSpacing: 0.3,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12),
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
           SideMenuTile(
             icon: Icon(
               Icons.dashboard,
@@ -93,7 +107,48 @@ class _SideMenuState extends State<SideMenu> {
             bgColor: Colors.transparent,
             title: "Messages",
             activeColor: Colors.grey,
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Text(
+              "GENERAL",
+              style: TextStyle(
+                  color: Colors.black,
+                  letterSpacing: 0.3,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12),
+            ),
+          ),
+          SideMenuTile(
+            icon: Icon(
+              Icons.settings,
+              color: Colors.grey,
+            ),
+            bgColor: Colors.transparent,
+            title: "Settings",
+            activeColor: Colors.grey,
+          ),
+          SideMenuTile(
+            icon: Icon(
+              Icons.view_agenda,
+              color: Colors.grey,
+            ),
+            bgColor: Colors.transparent,
+            title: "Apperance",
+            activeColor: Colors.grey,
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: SideMenuTile(
+              icon: Icon(
+                Icons.logout,
+                color: Colors.black,
+              ),
+              bgColor: Colors.transparent,
+              title: "Log Out",
+              activeColor: Colors.black,
+            ),
+          ),
         ],
       ),
     );

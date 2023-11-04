@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_template/utils/constants.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter_admin_template/utils/responsive.dart';
 
 class Statistics extends StatelessWidget {
   const Statistics({super.key});
@@ -28,47 +29,118 @@ class Statistics extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       fontSize: 20),
                 ),
-                Row(
-                  children: [
-                    CircleAvatar(
-                      radius: 10,
-                      backgroundColor: Constants.primaryBlueColor,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text("Earnings"),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CircleAvatar(
-                      radius: 10,
-                      backgroundColor: Constants.secondaryBlueColor,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text("Spendings"),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text("Weekyly"),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Icon(
-                      Icons.filter_list,
-                      size: 20,
-                    )
-                  ],
-                )
+                if (!Responsive.isMobile(context))
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 10,
+                        backgroundColor: Constants.primaryBlueColor,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text("Earnings"),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CircleAvatar(
+                        radius: 10,
+                        backgroundColor: Constants.secondaryBlueColor,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text("Spendings"),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            color: Constants.bgGreyColor,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Row(
+                          children: [
+                            Text("Weekyly"),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Icon(
+                              Icons.filter_list,
+                              size: 20,
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  )
+                else
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 10,
+                            backgroundColor: Constants.primaryBlueColor,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text("Earnings"),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 10,
+                            backgroundColor: Constants.secondaryBlueColor,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text("Spendings"),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            color: Constants.bgGreyColor,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Row(
+                          children: [
+                            Text("Weekyly"),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Icon(
+                              Icons.filter_list,
+                              size: 20,
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  )
               ],
             ),
+            if (!Responsive.isMobile(context))
+              SizedBox(
+                height: 40,
+              )
+            else
+              SizedBox(height: 10),
             SizedBox(
-              height: 40,
-            ),
-            SizedBox(
-              height: 250,
+              height: (Responsive.isMobile(context)) ? 230 : 250,
               width: 650,
               child: BarChart(
                 BarChartData(

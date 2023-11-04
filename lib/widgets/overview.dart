@@ -29,7 +29,7 @@ class OverView extends StatelessWidget {
             mobile: OverviewInfoCardGridView(
               crossAxisCount: _size.width < 850 ? 2 : 4,
               childAspectRatio:
-                  _size.width < 850 && _size.width > 350 ? 2.0 : 1.0,
+                  _size.width < 850 && _size.width > 350 ? 1.7 : 1.0,
             ),
             tablet: OverviewInfoCardGridView(
               childAspectRatio:
